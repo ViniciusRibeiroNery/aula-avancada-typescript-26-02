@@ -1,3 +1,5 @@
+/* Importando as interfaces */
+
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 
