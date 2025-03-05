@@ -4,7 +4,7 @@ import { GerenciadorVeiculos } from "./classe/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
 import EstoqueVeiculos from "./classe/EstoqueVeiculos";
-
+import { Veiculo, filtrarPorAno, filtrarPorMarca } from "./classe/FiltroVeiculos";
 
 const Carro1: Carro = {
     marca: "Toyota",
@@ -65,3 +65,13 @@ estoqueMotos.consultarEstoque("Honda 150");
 
 estoqueCarros.removerEstoque("Civic");
 estoqueCarros.consultarEstoque("Civic");
+
+const veiculos: Veiculo[] = [
+    { marca: "Toyota", modelo: "Corolla", ano: 2020 },
+    { marca: "Honda", modelo: "Civic", ano: 2021 },
+    { marca: "Ford", modelo: "Focus", ano: 2020 },
+    { marca: "Toyota", modelo: "Hilux", ano: 2022 },
+];
+
+console.log("Veículos do ano 2020:", filtrarPorAno(veiculos, 2020));
+console.log("Veículos da marca Toyota:", filtrarPorMarca(veiculos, "Toyota"));
