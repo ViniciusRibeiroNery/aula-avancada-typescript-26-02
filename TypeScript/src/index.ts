@@ -39,12 +39,13 @@ const Moto2: Moto = {
 const gerenciadorCarros = new GerenciadorVeiculos<Carro>();
 const gerenciadorMotos = new GerenciadorVeiculos<Moto>();
 
-gerenciadorCarros.adicionarVeiculo(Carro1);
-gerenciadorMotos.adicionarVeiculo(Moto1);
-gerenciadorMotos.adicionarVeiculo(Moto2);
-console.log("Lista de Carros: ", gerenciadorCarros.listaVeiculo());
-/*
-console.log("Carro: ", Carro1);
-console.log(Carro1.acelerar());
-console.log("Moto: ", Moto1);
-console.log(Moto1.acelerar());*/
+gerenciadorCarros.adicionar(Carro1);
+gerenciadorCarros.adicionar(Carro2);
+gerenciadorCarros.listarVeiculos();
+
+gerenciadorMotos.adicionar(Moto1);
+gerenciadorMotos.adicionar(Moto2);
+gerenciadorMotos.listarVeiculos();
+
+gerenciadorCarros.remover(Carro1);
+gerenciadorCarros.listarVeiculos();
