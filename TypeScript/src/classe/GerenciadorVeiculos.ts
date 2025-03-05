@@ -1,21 +1,19 @@
 export class GerenciadorVeiculos<T> {
 
-    private listaVeiculos: T[] = [];
+    private veiculos: T[] = [];
 
-    adicionarVeiculo(veiculo: T): void {
-        this.listaVeiculos.push(veiculo);
+    adicionar(veiculo: T): void {
+        this.veiculos.push(veiculo);
+        console.log("Veículo adicionado:", veiculo);
     }
 
-    listaVeiculo(): T[] {
-        return this.listaVeiculos;
+    remover(veiculo: T): void {
+        this.veiculos = this.veiculos.filter(v => v !== veiculo);
+        console.log("Veículo removido:", veiculo);
     }
-
-    RemoverVeiculo(veiculo: T): boolean {
-        const index = this.listaVeiculos.indexOf(veiculo);
-        if (index !== -1) {
-            this.listaVeiculos.splice(index, 1);
-            return true;
-        }
-        return false;
+    listarVeiculos(): void {
+        console.log("Lista de veículos:", this.veiculos);
     }
 }
+
+export default GerenciadorVeiculos;
