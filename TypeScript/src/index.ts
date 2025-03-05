@@ -3,6 +3,8 @@
 import { GerenciadorVeiculos } from "./classe/GerenciadorVeiculos";
 import { Carro } from "./interface/Carro";
 import { Moto } from "./interface/Moto";
+import EstoqueVeiculos from "./classe/EstoqueVeiculos";
+
 
 const Carro1: Carro = {
     marca: "Toyota",
@@ -49,3 +51,17 @@ gerenciadorMotos.listarVeiculos();
 
 gerenciadorCarros.remover(Carro1);
 gerenciadorCarros.listarVeiculos();
+
+const estoqueCarros = new EstoqueVeiculos();
+const estoqueMotos = new EstoqueVeiculos();
+
+estoqueCarros.adicionarEstoque("Corolla", 5);
+estoqueCarros.adicionarEstoque("Civic", 3);
+estoqueCarros.consultarEstoque("Corolla");
+
+estoqueMotos.adicionarEstoque("Yamaha 250", 8);
+estoqueMotos.adicionarEstoque("Honda 150", 10);
+estoqueMotos.consultarEstoque("Honda 150");
+
+estoqueCarros.removerEstoque("Civic");
+estoqueCarros.consultarEstoque("Civic");
